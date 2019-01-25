@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default class WeatherList extends Component {
+class WeatherList extends Component {
     renderWeather(cityData) {
         const name = cityData.city.name;
 
@@ -34,3 +34,5 @@ export default class WeatherList extends Component {
 function mapStateToProps({ weather }) {
     return { weather };
 }
+
+export default connect(mapStateToProps)(WeatherList);
